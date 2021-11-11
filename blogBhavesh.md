@@ -2,6 +2,7 @@
 layout: default
 ---
 ## Author
+
 [Bhavesh Shrimali](https://bhaveshshrimali.github.io/)
 
 ## Introduction
@@ -19,7 +20,7 @@ $$
   {\color{red}{\Delta} t}
   \mathbf{f}_{t}\left(\mathbf{h}_{t}\right)\quad \mathbf{h}_{t} \in \mathbb{R}^{d}\quad \text{and} \quad \mathbf{f}_{t}: \mathbb{R}^{d} \rightarrow \mathbb{R}^{d}
 $$
-It is plain that with $\color{red}\Delta t = 1$, we recover the ResNet update step. Now, if you instead consider $t$ as a time-like variable, then I can take $h_t$ on the LHS and take the limit of the step size going to zero, i.e. 
+It is plain that with $\color{red}\Delta t = 1$, we recover the ResNet update step. Now, if you instead consider $t$ as a time-like variable, then I can take $h_t$ on the LHS and take the limit of the step size going to zero, i.e.
 
 $$
     \lim _{\Delta t \rightarrow 0^+} \frac{\mathbf{h}_{t+\Delta t}-\mathbf{h}_{t}}{\Delta t}=\frac{\mathrm{d} \mathbf{h}(t)}{\mathrm{d} t}=\mathbf{f}(\mathbf{h}(t), t)
@@ -34,13 +35,14 @@ The corresponding flow can be visualized to get an intuition of the transition f
 <p style="text-align:center;"><img src="neuralODEsVis.svg" alt="Logo" width="400"></p>
 <!-- <img src="neuralODEsVis.svg" alt="drawing" width="500" class="center"> -->
 
-To put things in perspective, 
+To put things in perspective,
 
 * In ResNets: we map an input $\bf x$ to output $\bf y$ by a forward pass through the network
 * We tune the weights of the network to minimize $d({\bf y}, {\bf y}_{\text{true}})$
 * For NODEs: we instead adjust the dynamics of the system encoded by $\bf f$ such that the ODE transforms input $\bf x$ to $\bf y$ to minimize  $d({\bf y}, {\bf y}_{\text{true}})$
 
 * * * * * *
+
 ## ODE Flows
 
 Before introducing the idea of Augmented Neural ODEs (ANODEs), we briefly revisit the notion of an ODE flow. The flow corresponding to a vector field $\mathbf{f}(\mathbf{h}(t), t)$ is given by $\phi(t)$, such that,
@@ -52,13 +54,14 @@ It is worth noting that the flow resulting from a Neural ODE is homeomorphic, i.
 <p style="text-align:center;"><img src="ODEFlow.svg" alt="Logo" width="500"></p>
 
 * * * * * *
+
 ## Limitations of Neural ODEs/ODE Flows
 
-It is important to note that not all functions can be approximated by a NODE/ODEFlow. Consider for instance $g_{1 \mathrm{~d}}: \mathbb{R} \rightarrow \mathbb{R}$, such that $g_{1 \mathrm{~d}}(-1)=1$ and $g_{1 \mathrm{~d}}(1)=-1$. It can be seen clearly from the figure below that a NODE cannot approximate this function, no matter how small a timestep or how large the terminal time $T$. This is due to the fact that the ODE trajectories cannot cross each other. A formal proof can be found in the appendix in [the paper](https://arxiv.org/pdf/1904.01681.pdf#page=12&zoom=100,144,473), however it is simply built around the uniqueness of a solution to an ODE. An ODE cannot have two solutions that are different everywhere but at point. That is, the solutions are either identical or they do not intersect at any point. ResNets on the other hand do not suffer from this, as can be seen from the figure on the top-right. 
+It is important to note that not all functions can be approximated by a NODE/ODEFlow. Consider for instance $g_{1 \mathrm{~d}}: \mathbb{R} \rightarrow \mathbb{R}$, such that $g_{1 \mathrm{~d}}(-1)=1$ and $g_{1 \mathrm{~d}}(1)=-1$. It can be seen clearly from the figure below that a NODE cannot approximate this function, no matter how small a timestep or how large the terminal time $T$. This is due to the fact that the ODE trajectories cannot cross each other. A formal proof can be found in the appendix in [the paper](https://arxiv.org/pdf/1904.01681.pdf#page=12&zoom=100,144,473), however it is simply built around the uniqueness of a solution to an ODE. An ODE cannot have two solutions that are different everywhere but at point. That is, the solutions are either identical or they do not intersect at any point. ResNets on the other hand do not suffer from this, as can be seen from the figure on the top-right.
 
 <p style="text-align:center;"><img src="g1d.svg" alt="Logo" width="500"></p>
 
-Having motivated through a $1$D example, let us now consider the $2$D version of it, i.e. 
+Having motivated through a $1$D example, let us now consider the $2$D version of it, i.e.
 $$
   \begin{cases}g(\mathbf{x})=-1 & \text { if }\|\mathbf{x}\| \leq r_{1} \\ g(\mathbf{x})=1 & \text { if } r_{2} \leq\|\mathbf{x}\| \leq r_{3}\end{cases}
 $$
@@ -79,7 +82,7 @@ This motivates exploring an augmented space and seeing its effect the learned OD
 
 ## Augmented Neural ODEs (ANODEs)
 
-As motivated above the idea is to augment the space on which the ODE is learned. In other words, 
+As motivated above the idea is to augment the space on which the ODE is learned. In other words,
 $\mathbb{R}^d \rightarrow \mathbb{R}^{d+p}$ which allows the ODE to lift points into additional dimensions to avoid trajectories from intersecting each other. Let ${\bf a}(t)\in \mathbb{R}^p$ be a point in the augmented part of the space, the reformulation can be written as
 $$
   \frac{\mathrm{d}}{\mathrm{d} t}\left[\begin{array}{l}
@@ -105,7 +108,6 @@ It can be seen that the corresponding flows are almost linear for ANODEs and the
 
 <p style="text-align:center;"><img src="EvolutionFeatures.svg" alt="Logo" width="800"></p>
 
-
 As we can see the number of function evaluations almost doubles for NODEs but remains roughly the same for ANODEs.
 
 ### Generalization
@@ -117,13 +119,12 @@ In order to see the generalization properties of ANODEs the authors train both A
 ANODEs again lead to flows that are much more plausible compared to NODEs. This is because NODEs can only continuously deform the input space. Therefore, the learned flow must squeeze points in the inner circle through the annulus leading to poor generalization. In order to test the generalization properties of ANODEs, the authors consider a further test. They create a validation set by removing random slices of the input space and train both NODEs and ANODEs on the training set and plot the evolution of the validation loss during training. The same thing emerges out, that is, ANODEs generalize better!
 
 ****
-## Experiments
 
+## Experiments
 
 The authors carry out generative modeling experiments on the popular MNIST, CIFAR10 and SVHN datasets. The same story emerges from there as well. ANODEs outperform NODEs for the most part. For the figure below, $p=0$ corresponds to the base case (NODEs), where $p$ denotes the number of extra channels in the augmented space. Results for MNIST and CIFAR 10 are given below
 
 <p style="text-align:center;"><img src="CIFARMNIST.svg" alt="Logo" width="800"></p>
-
 
 ## Conclusions
 
@@ -153,11 +154,12 @@ $$
 
 ## Code
 
-The code to reproduce key findings from the paper is developed on top of a PyTorch library [`torchdiffeq`](https://github.com/rtqichen/torchdiffeq) and can be accessed at the authors' [`git repository`](https://github.com/EmilienDupont/augmented-neural-odes). 
+The code to reproduce key findings from the paper is developed on top of a PyTorch library [`torchdiffeq`](https://github.com/rtqichen/torchdiffeq) and can be accessed at the authors' [`git repository`](https://github.com/EmilienDupont/augmented-neural-odes).
 
 Several other open source implementations are available online. A fast and flexible implementation in `Julia` is available in the `DiffEqFlux` library [here](https://diffeqflux.sciml.ai/dev/examples/augmented_neural_ode/), which builds on top of the `Flux.jl` framework and as part of the larger `SciML` ecosystem in Julia.
 
 ****
+
 ## Citation
 
     @misc{dupont2019augmented,
@@ -286,7 +288,6 @@ end
 ### Large image
 
 ![](https://guides.github.com/activities/hello-world/branching.png)
-
 
 ### Definition lists can be used with HTML syntax.
 

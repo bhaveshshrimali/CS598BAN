@@ -78,7 +78,7 @@ This motivates exploring an augmented space and seeing its effect the learned OD
 
 <p style="text-align:center;"><img src="summary.gif" alt="Logo" width="400"></p>
 
-****
+* * * * * *
 
 ## Augmented Neural ODEs (ANODEs)
 
@@ -118,7 +118,7 @@ In order to see the generalization properties of ANODEs the authors train both A
 
 ANODEs again lead to flows that are much more plausible compared to NODEs. This is because NODEs can only continuously deform the input space. Therefore, the learned flow must squeeze points in the inner circle through the annulus leading to poor generalization. In order to test the generalization properties of ANODEs, the authors consider a further test. They create a validation set by removing random slices of the input space and train both NODEs and ANODEs on the training set and plot the evolution of the validation loss during training. The same thing emerges out, that is, ANODEs generalize better!
 
-****
+* * * * * *
 
 ## Experiments
 
@@ -150,7 +150,7 @@ $$
 * This leads to ${\color{red}slower\ learning\ and\ complex\ flows}$ which are computationall expensive
 * Augmented Neural ODEs learn the flow from input to features in an augmented space and can therefore model more complex functions using simpler flows while at the same time ${\color{blue}achieving\ lower\ losses,\ incurring\ lower\ computational\ cost,\ and\ improved\ stability\ and\ generalization}$.
 
-****
+* * * * * *
 
 ## Code
 
@@ -158,7 +158,7 @@ The code to reproduce key findings from the paper is developed on top of a PyTor
 
 Several other open source implementations are available online. A fast and flexible implementation in `Julia` is available in the `DiffEqFlux` library [here](https://diffeqflux.sciml.ai/dev/examples/augmented_neural_ode/), which builds on top of the `Flux.jl` framework and as part of the larger `SciML` ecosystem in Julia.
 
-****
+* * * * * *
 
 ## Citation
 

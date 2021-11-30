@@ -1,0 +1,537 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{bm, enumitem, booktabs}
+\usepackage{mathtools}
+\usepackage{tensor}
+%Information to be included in the title page:
+% \def\Ktan{\mathcal{K}}
+% \def\Jtan{\mathcal{J}}
+\def\myPhi{{\mathrm{\Phi}}}
+\def\myPsi{{\mathrm{\Psi}}}
+\def\myF{{\mathsf{F}}}
+\def\myS{\bf\mathsf{S}}
+\def\myC{{\bf\mathsf{C}}}
+\def\myT{{\mathsf{T}}}
+\def\myM{{\mathsf{M}}}
+\newcommand\lrB[1]{{\left[#1 \right]}}
+\input{definitions}
+\title{Calculations: J. Elasticity -- Bubbles}
+\author{Bhavesh}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Model}\vspace*{-2ex}
+\begin{block}{Potentials}
+    \begin{equation*}
+        \mathrm{\Psi}(\boldsymbol{\mathsf{F}},\boldsymbol{\mathsf{F}}^v)=\mathrm{\Psi}^{{\rm Eq}}(\boldsymbol{\mathsf{F}})
+        +J^v\mathrm{\Psi}^{{\rm NEq}}\left(\boldsymbol{\mathsf{F}}{\boldsymbol{\mathsf{F}}^v}^{-1}, \mathsf{F}^v\right) \label{psi_effective}
+    \end{equation*}
+\begin{equation*}
+    \myPhi(\boldsymbol{\mathsf{F}},\boldsymbol{\mathsf{F}}^v,\dot{\boldsymbol{\mathsf{F}}}^v)=\dfrac{1}{2}J^v\dot{\boldsymbol{\mathsf{F}}}^v{\boldsymbol{\mathsf{F}}^v}^{-1}\cdot\left[
+    \boldsymbol{\mathsf{M}}{\boldsymbol{\mathsf{F}}}^v{\boldsymbol{\mathsf{F}}^v}^{-1}\right]\quad \textsf{with}\quad \boldsymbol{\mathsf{M}}=2 \mathsf{m}_{\mathcal{K}}\Ktan+3\mathsf{m}_{\mathcal{J}}\Jtan,  \label{phi_effective}
+\end{equation*}
+\end{block}
+\begin{block}{Evolution equation}
+    \begin{equation*}
+        \del{\Psi}{\mathsf{F}^v}
+        +
+        \del{\myPhi}{\dot{\mathsf{F}}^v} = {\bf 0} \Longleftrightarrow 
+        \del{\myPhi}{\dot{\mathsf{F}}^v} = -\del{\myPsi}{\mathsf{F}^v}
+    \end{equation*}
+\end{block}
+Let, $\Gamma^v = \dot{\mathsf{F}}^v{\mathsf{F}^v}^{-1}$ and apply chain rule!
+\begin{block}{}
+    \begin{equation*}
+        \del{\myPhi}{\dot{\myF}^v}
+        =
+        \del{\myPhi}{\Gamma^v}\cdot\del{\Gamma^v}{\dot{\myF}^v}\Longleftrightarrow
+        \del{\myPhi}{\Gamma^v_{mn}}\del{\Gamma^v_{mn}}{\dot{\myF}^v_{ij}}
+    \end{equation*}
+\end{block}
+\end{frame}
+\begin{frame}{Model..}
+    \begin{block}{}
+        \footnotesize\begin{equation*}
+            \del{\Gamma^v_{mn}}{\dot{\myF}^v_{ij}} = \delta_{mi}\myF^{v^{-1}}_{jn}\quad\text{and}\quad\del{\myPhi}{\Gamma^v_{mn}} = \myM_{mnrs}\Gamma^v_{rs}
+        \end{equation*}
+        \begin{equation*}
+            \myM_{mnrs}\Gamma^v_{rs} =  m_{\mathcal{K}}\lr{
+                \Gamma^v_{mn} + \Gamma^v_{nm}
+            } + \left(m_\mathcal{J} - \frac{2}{3}m_\mathcal{K}\right)\Gamma^v_{rr}\delta_{mn}
+        \end{equation*}
+        \begin{align*}
+            \Gamma^v_{rr} \Longleftrightarrow \text{tr}\lr{
+                \Gamma^v
+            } = \frac{1}{2}\dot{\bf C}^v\cdot{\bf C}^{v^{-1}}\qquad \text{where}\quad {\bf C}^v = {{\bf F}^v}^T {\bf F}^v
+        \end{align*}
+    \end{block}
+    \begin{block}{Derivative of free energy}
+        \footnotesize\begin{align*}
+            \del{\myPsi}{\myF^v}
+            & =
+            \del{\myPsi}{I^e_1}\del{I^e_1}{\myF^v} + 
+            \del{\myPsi}{J^v}\del{J^v}{\myF^v} \\
+            \del{I^e_1}{\myF^v} & = -2 {\myF^v}^{-T}\myC{\myF^v}^{-1}{\myF^v}^{-T}\quad\text{and}\quad
+            \del{J^v}{\myF^v} = J^v{\myF^v}^{-T} \\
+            \del{\myPsi}{I^e_1} & = J^v\del{\myPsi^{\rm NEq}}{I^e_1};\qquad
+            \del{\myPsi}{J^v} = \left( \myPsi^{\rm NEq} + J^v\del{\myPsi^{\rm NEq}}{J^v}\right)
+        \end{align*}
+    \end{block}
+    \end{frame}
+
+    \begin{frame}{Model....}
+        \begin{block}{Free Energy}
+            \footnotesize\begin{align*}
+                \del{\myPsi}{\myF^v}=
+                -2J^v \del{\myPsi^{\rm NEq}}{I^e_1}{\myF^v}^{-T}\myC{\myF^v}^{-1}{\myF^v}^{-T} +
+                \left({\del{\myPsi}{J^v}}\right) J^v{\myF^v}^{-T}
+            \end{align*}
+        \end{block}
+        \begin{block}{Dissipation potential}
+            \footnotesize\begin{align*}
+                \del{\myPhi}{\dot{\mathsf{\bf F}}^v}
+            =
+            J^vm_\mathcal{K}
+            \left(
+                \dot{\mathsf{F}}^v {\mathsf{F}^v}^{-1} {\mathsf{F}^v}^{-T}
+                +
+                {\mathsf{F}^v}^{-T} {\dot{\mathsf{F}}}^{v^T} {\mathsf{F}^v}^{-T}
+            \right) +J^v
+            \lr{m_\mathcal{J}
+            - \frac{2}{3}m_\mathcal{K}
+            }\text{tr}\lr{\Gamma^v}{\mathsf{F}^v}^{-T} 
+            \end{align*}
+        \end{block}
+        \begin{block}{Combined}
+            \footnotesize
+            \begin{align*}
+                & 2J^v \del{\myPsi^{\rm NEq}}{I^e_1}{\myF^v}^{-T}\myC{\myF^v}^{-1}{\myF^v}^{-T} -
+                J^v\left({\del{\myPsi}{J^v}}\right) {\myF^v}^{-T}\\ & = J^vm_\mathcal{K}
+                \left(
+                    \dot{\mathsf{F}}^v {\mathsf{F}^v}^{-1} {\mathsf{F}^v}^{-T}
+                    +
+                    {\mathsf{F}^v}^{-T} {\dot{\mathsf{F}}}^{v^T} {\mathsf{F}^v}^{-T}
+                \right)+J^v
+                \lr{m_\mathcal{J}
+                - \frac{2}{3}m_\mathcal{K}
+                }\text{tr}\lr{\Gamma^v}{\mathsf{F}^v}^{-T}
+            \end{align*}
+        \end{block}
+    \end{frame}
+    \begin{frame}
+        \begin{block}{\footnotesize Pre- and post-multiply by ${\myF^v}^{T}$ and cancel $J^v$}
+            \footnotesize\begin{align*}
+                2\del{\myPsi^{\rm NEq}}{I^e_1}\myC{\myF^v}^{-1} -
+                \left({\del{\myPsi}{J^v}}\right) {\myF^v}^{T} = m_\mathcal{K}
+                \left(
+                    {\myF^v}^T\dot{\mathsf{F}}^v {\mathsf{F}^v}^{-1}
+                    +
+                    {\dot{\mathsf{F}}}^{v^T}
+                \right)+
+                \lr{m_\mathcal{J}
+                - \frac{2}{3}m_\mathcal{K}
+                }\text{tr}\lr{\Gamma^v}{\mathsf{F}^v}^{T}
+            \end{align*}
+        \end{block}
+        \begin{block}{\footnotesize Post-multiply by ${\myF^v}$}
+            \footnotesize\begin{align*}
+                2 \del{\myPsi^{\rm NEq}}{I^e_1}\myC -
+                \left({\del{\myPsi}{J^v}}\right) {\myC^v}= m_\mathcal{K}
+                \left(
+                    {\myF^v}^T\dot{\mathsf{F}}^v
+                    +
+                    {\dot{\mathsf{F}}}^{v^T} {\mathsf{F}}^v
+                \right)
+                +
+                \lr{m_\mathcal{J}
+                - \frac{2}{3}m_\mathcal{K}
+                }\text{tr}\lr{\Gamma^v}\myC^v
+            \end{align*}
+        \end{block}
+        \begin{block}{\footnotesize Post multiply by ${\myC^v}^{-1}$}
+            \footnotesize\begin{align*}
+                2 \del{\myPsi^{\rm NEq}}{I^e_1}\myC{\myC^v}^{-1} -
+                \left({\del{\myPsi}{J^v}}\right){\bf I}
+                = m_\mathcal{K}
+                \left(
+                    \dot{\myC}^v{{\myC}^v}^{-1}
+                \right) 
+                + \frac{1}{2}
+                \lr{m_\mathcal{J}
+                - \frac{2}{3}m_\mathcal{K}
+                }\dot{\myC}^v\cdot{{\myC}^v}^{-1}\,{\bf I}
+            \end{align*}
+        \end{block}
+        \begin{block}{\footnotesize Finally, take the trace}
+            \footnotesize\begin{align*}
+                2 \del{\myPsi^{\rm NEq}}{I^e_1}\myC\cdot{\myC^v}^{-1} -
+                3\left({\del{\myPsi}{J^v}}\right) 
+                = m_\mathcal{K}
+                \left(
+                    \dot{\myC}^v\cdot{{\myC}^v}^{-1}
+                \right) 
+                + \frac{3}{2}
+                \lr{m_\mathcal{J}
+                - \frac{2}{3}m_\mathcal{K}
+                }\dot{\myC}^v\cdot{{\myC}^v}^{-1}
+            \end{align*}
+        \end{block}
+    \end{frame}
+    \begin{frame}
+        \begin{block}{Therefore,}
+            \footnotesize\color{blue}\begin{align*}
+                \dot{\myC}^v\cdot{\myC^v}^{-1}
+                =
+                \frac{2}{m_\mathcal{J}}\lrB{
+                    \frac{2}{3}\del{\myPsi^{\rm NEq}}{I^e_1}{\myC}\cdot{\myC^v}^{-1}
+                -
+                \left({\del{\myPsi}{J^v}}\right)
+                }
+            \end{align*}
+        \end{block}
+        \begin{block}{Substituting back,}
+            \footnotesize\begin{align*}
+                & 2 \del{\myPsi^{\rm NEq}}{I^e_1}\myC{\myC^v}^{-1} -
+                \left({\del{\myPsi}{J^v}}\right) {\bf I} = m_\mathcal{K}
+                \left(
+                    \dot{\myC}^v{\myC^v}^{-1}
+                \right)
+                \\ &+
+                \frac{1}{m_\mathcal{J}}
+                \lr{m_\mathcal{J}
+                - \frac{2}{3}m_\mathcal{K}
+                }\lrB{
+                    \frac{2}{3}\del{\myPsi^{\rm NEq}}{I^e_1}{\myC}\cdot{\myC^v}^{-1}
+                -
+                \left({\del{\myPsi}{J^v}}\right)
+                }{\bf I}
+            \end{align*}
+        \end{block}
+        \begin{block}{where,}
+            \footnotesize\begin{align*}
+                2 \del{\myPsi^{\rm NEq}}{I^e_1} = \overline{\nu} 
+                =
+                \frac{3(1-f^v)}{(3+2f^v)}\nu_{m}
+                =
+                \frac{3(1 - f_0)}{(5 J^v + 2f_0  - 2)}\nu_m
+            \end{align*}
+        \end{block}
+    \end{frame}
+    \begin{frame}
+        \begin{block}{Substituting this in the above equation,}
+            \footnotesize
+            \begin{align*}
+                \overline{\nu}\myC{\myC^v}^{-1} -
+                \left({\del{\myPsi}{J^v}}\right) {\bf I} = m_\mathcal{K}
+                \left(
+                    \dot{\myC}^v{\myC^v}^{-1}
+                \right)
+                +
+                \frac{1}{m_\mathcal{J}}
+                \lr{m_\mathcal{J}
+                - \frac{2}{3}m_\mathcal{K}
+                }\lrB{
+                    \frac{1}{3}\overline{\nu}{\myC}\cdot{\myC^v}^{-1}
+                -
+                \left({\del{\myPsi}{J^v}}\right)
+                }{\bf I}
+            \end{align*}
+        \end{block}
+        \begin{block}{Post multiply by $\myC^v$}
+            \footnotesize
+            \begin{align*}
+                & \overline{\nu}\myC -
+                \left({\del{\myPsi}{J^v}}\right) {\myC}^v = m_\mathcal{K}
+                \left(
+                    \dot{\myC}^v
+                \right)
+                +
+                \frac{1}{m_\mathcal{J}}
+                \lr{m_\mathcal{J}
+                - \frac{2}{3}m_\mathcal{K}
+                }\lrB{
+                    \frac{\overline{\nu}}{3}{\myC}\cdot{\myC^v}^{-1}
+                -
+                \left({\del{\myPsi}{J^v}}\right)
+                }{\myC}^v\\
+                \implies &
+                \overline{\nu}\myC -
+                \left({\del{\myPsi}{J^v}}\right) {\myC}^v
+                 = m_\mathcal{K}
+                \left(
+                    \dot{\myC}^v
+                \right)
+                +
+                \lr{1
+                - \frac{2}{3}\frac{m_\mathcal{K}}{m_\mathcal{J}}
+                }\lrB{
+                    \frac{\overline{\nu}}{3}{\myC}\cdot{\myC^v}^{-1}
+                -
+                \left({\del{\myPsi}{J^v}}\right)
+                }{\myC}^v
+            \end{align*}
+        \end{block}
+    \end{frame}
+    \begin{frame}
+        \begin{block}{\footnotesize Simplifying a bit more...}
+           \footnotesize\begin{align*}
+            & \overline{\nu}\myC -
+            \left({\del{\myPsi}{J^v}}\right) {\myC}^v
+             = m_\mathcal{K}
+            \left(
+                \dot{\myC}^v
+            \right)
+            +
+            \lr{1
+            - \frac{2}{3}\frac{m_\mathcal{K}}{m_\mathcal{J}}
+            }\lrB{
+                \frac{\overline{\nu}}{3}{\myC}\cdot{\myC^v}^{-1}}{\myC}^v
+            \\ 
+            &-\lr{1-\frac{2}{3}\frac{m_\mathcal{K}}{m_\mathcal{J}}}\lrB{    
+           {\del{\myPsi}{J^v}}
+            }\myC^v\\
+            \implies & \overline{\nu}\myC = m_\mathcal{K}\dot{\myC}^v+\lr{1
+            - \frac{2}{3}\frac{m_\mathcal{K}}{m_\mathcal{J}}
+            }\lrB{
+                \frac{\overline{\nu}}{3}{\myC}\cdot{\myC^v}^{-1}}{\myC}^v
+                +
+                \frac{2m_\mathcal{K}}{3m_\mathcal{J}}\lrB{\color{red}    
+                   {\del{\myPsi}{J^v}}
+                    }\myC^v
+           \end{align*}
+        \end{block}
+        \begin{block}{\footnotesize Coefficient with $\myC\cdot{\myC^v}^{-1}$}
+            \footnotesize\begin{align*}
+                &\frac{\overline{\nu}}{3}+\lr{\frac{2m_\mathcal{K}}{3m_\mathcal{J}}}\lrB{
+                    -\frac{\overline{\nu}}{3}
+                    +\dots\text{\color{red}Coming from the second term}
+                }\\
+                \implies & \frac{\overline{\nu}}{3}+\lr{\frac{2m_\mathcal{K}}{3m_\mathcal{J}}}
+                \lrB{
+                    -\frac{(f_0-1)\left(f_0-5 J^v-1\right)}{\left(2 f_0+5 J^v-2\right){}^2}
+                    \nu _m } = \alpha
+            \end{align*}
+        \end{block}
+    \end{frame}
+    \begin{frame}
+        \begin{block}{\footnotesize Remaining RHS}
+            \tiny\begin{align*}
+                \frac{1}{4} \nu _m 
+                \left(8 J^{2/3} {J^v}^{1/3} 
+                    \left(-\frac{15 (f_0-1)}{\left(2 f_0+5 {J^v}-2\right){}^2}-\frac{1}{J}\right)
+                -\frac{75 J^{2/3} {J^v}^{4/3}}{\left(2 f_0+5 {J^v}-2\right){}^2}
+                +\frac{4 \left(f_0+2 {J^v}-J-1\right)}{{\lr{J + f_0 - 1}}^{1/3} \left(f_0+{J^v}-1\right){}^{2/3}}+7 \left(\frac{J}{{J^v}}\right){}^{2/3}\right)\\ = \Theta\quad\text{say}
+            \end{align*}
+        \end{block}
+        % \begin{block}{\footnotesize Remaining RHS, sans $\nu_m$ (with a minus sign!)}
+        %     \footnotesize\begin{align*}
+        %         J^{2/3} {J^v}^{1/3} &\left(\frac{2}{J}-\frac{5 (f_0-1)}{\left(2 f_0+5 {J^v}-2\right){}^2}\right)
+        %         -\frac{25 J^{2/3} {J^v}^{4/3}}{\left(2 f_0+5 {J^v}-2\right){}^2}\\
+        %         &+\frac{-f_0-2 {J^v}+J+1}{\lr{J+f_0 - 1}^{1/3} \left(f_0+{J^v}-1\right){}^{2/3}}
+        %         -\frac{7 (f_0-1)^2 \left(\frac{J}{{J^v}}\right){}^{2/3}}{\left(2 f_0+5 {J^v}-2\right){}^2} = -\Theta (say!)
+        %     \end{align*}
+        % \end{block}
+        \begin{block}{\footnotesize Simplifying and rewriting}
+            \footnotesize\begin{align*}
+                &m_\mathcal{K}\lr{\dot{\myC}^v}
+                =\overline{\nu}\myC - \frac{2m_\mathcal{K}}{3m_\mathcal{J}}\Theta\myC^v
+                -
+                \lr{\alpha\myC\cdot{\myC^v}^{-1}}\myC^v\\
+                \implies &
+                {\dot{\myC}^v} = \frac{\overline{\nu}}{m_\mathcal{K}}\myC
+                -
+                \frac{2}{3m_\mathcal{J}}\Theta\myC^v-
+                \lr{
+                    \frac{\alpha}{m_\mathcal{K}}\myC\cdot{\myC^v}^{-1}
+                }\myC^v
+            \end{align*}
+        \end{block}
+        \begin{block}{\footnotesize Simplifying $\alpha/m_\mathcal{K}$}
+            \footnotesize\begin{align*}
+                \frac{\alpha}{m_\mathcal{K}}=\frac{\overline{\nu}}{3m_\mathcal{K}}
+                +
+                \lr{\frac{2}{3m_\mathcal{J}}} \lrB{
+                    \frac{\lr{1-f_0}\left(f_0-5 J^v-1\right)}{\left(2 f_0+5 J^v-2\right){}^2}
+                    \nu _m }
+            \end{align*}
+        \end{block}
+    \end{frame}
+    \begin{frame}
+        \begin{block}{\footnotesize Simplifying $\alpha/m_\mathcal{K}$...}
+            \footnotesize\begin{align*}
+                \frac{\alpha}{m_\mathcal{K}}
+                &=\frac{\overline{\nu}}{3m_\mathcal{K}}
+                +
+                \lr{\frac{2}{3m_\mathcal{J}}} \lrB{
+                    \frac{\lr{1-f_0}\left(f_0-5 J^v-1\right)}{\left(2 f_0+5 J^v-2\right){}^2}
+                    \nu _m }\\
+                    & = \frac{\nu_m}{3\eta_m} + \frac{2\nu_m}{3\eta_m}\times\lr{\frac{\eta_m}{m_\mathcal{J}}}\lrB{
+                        \frac{\lr{1-f_0}\left(f_0-5 J^v-1\right)}{\left(2 f_0+5 J^v-2\right){}^2}
+                       }\\
+                       \implies  -\frac{\alpha}{m_\mathcal{K}}
+                       &=\frac{2\nu_m}{3\eta_m}\lrB{
+                           -\frac{1}{2} + \frac{\lr{1-f_0}\left(-f_0+5 J^v+1\right)}{\left(2 f_0+5 J^v-2\right){}^2}\frac{\eta_m}{m_\mathcal{J}}
+                       }\quad\text{\color{blue}Matched!!}
+            \end{align*}
+        \end{block}
+        \begin{block}{\footnotesize Simplifying terms in $\Theta$...}
+            \footnotesize\begin{align*}
+                -\frac{2}{3m_\mathcal{J}}\Theta_{(3)} 
+                = 
+                \frac{2\nu_m}{3\eta_m}\times \frac{\eta_m}{m_\mathcal{J}}
+                \frac{J -f_0 - 2 {J^v} + 1}{\lr{J+f_0 - 1}^{1/3} \left(f_0+{J^v}-1\right){}^{2/3}}\qquad \text{\color{blue}Matched!!}
+            \end{align*}
+            % \footnotesize\begin{align*}
+            %     \frac{2}{3m_\mathcal{J}}\Theta_{(1)_1} 
+            %     = 
+            %     \frac{2 \sqrt[3]{J^v} \nu _m}{\sqrt[3]{J}}
+            %     =
+            %     2\lr{\frac{J^v}{J}}^{1/3}
+            %     \qquad \text{\color{blue}Matched!!}
+            % \end{align*}
+        \end{block}
+        \begin{block}{\footnotesize Now combining $\Theta_{(1)_1}$ and $\Theta_{(2)}$}
+            \footnotesize\begin{align*}
+                -\frac{15J^{2/3} {J^v}^{1/3}
+                \left(
+                    5 {J^v} + 8 f_0 - 8
+                \right) \nu _m }{4\left(5 {J^v} + 2 f_0 -2\right){}^2}
+            \end{align*}
+        \end{block}
+        % \begin{block}{Now evaluating: $\left({\del{\myPsi}{J^v}}\right)$}
+        %     \footnotesize\begin{align*}
+        %         =\frac{J^v\nu_m}{4}
+        %         \left(
+        %             \frac{12 (f_0-1)^2 
+        %             \left(
+        %                 3 \left(\frac{J}{J^v}\right)^{2/3}
+        %                 -
+        %                 I^e_1
+        %             \right)}{\left(2 f_0+5 J^v-2\right)^2}
+        %             +
+        %             \frac{150 {J^v}^2 \left(\frac{J}{J^v}\right)^{2/3}}{\left(2 f_0+5 J^v-2\right)^2}
+        %             +\right. \\
+        %             \left.
+        %             \frac{4 \left(f_0+2 J^v-J-1\right)}{J^v \left(\frac{f_0-1}{J^v}+1\right)^{2/3} \sqrt[3]{\frac{f_0+J-1}{J^v}}}
+        %             +
+        %             \frac{4 J \left(\frac{15 (f_0-1)}{\left(2 f_0+5 J^v-2\right){}^2}-\frac{2}{J}\right)}{\sqrt[3]{\frac{J}{J^v}}}-2 \left(\frac{J}{J^v}\right)^{2/3}
+        %         \right)
+        %     \end{align*}
+        % \end{block}
+        % \begin{block}{But remember}
+        %     \footnotesize\begin{align*}
+        %         I^e_1 = \myC\cdot{\myC^v}^{-1}\qquad\text{and this is there {\color{red} in this term!!}}
+        %     \end{align*}
+        %     also the coefficient of $I^e_1$ in the above term is
+        %     \begin{align*}
+        %         -\frac{3 (f_0-1)^2 \nu _m}{\left(2 f_0+5 J^v-2\right)^2}
+        %     \end{align*}
+        % \end{block}
+    \end{frame}
+    \begin{frame}
+        \begin{block}{\footnotesize which leaves only $\Theta_{(1)_2}$ and $\Theta_{(4)}$ (remember to take the negative sign) }
+            \footnotesize\begin{align*}
+                \frac{ \nu _m}{4} \left(7 \left(\frac{J}{{J^v}}\right)^{2/3}
+                -
+                8\lr{\frac{J^v}{J}}^{1/3}\right)
+            \end{align*}
+        \end{block}
+        \begin{block}{\footnotesize Putting it together}
+            \footnotesize\begin{align*}
+                \dot{\myC}^v
+               & =
+                \frac{\nu_m}{\eta_m}\myC
+                +
+                \frac{2\nu_m}{3\eta_m}\left[
+                    \frac{\eta_m}{m_\mathcal{J}}\left(
+                        \frac{8J^v-7J}{4{J^v}^{2/3}J^{1/3}}
+                        +\frac{J - 2 {J^v} - f_0 + 1}{\lr{J+f_0 - 1}^{1/3} \left({J^v}+f_0-1\right)^{2/3}}+\right.\right. \\ &\left.\left.
+                        \, \frac{15J^{2/3} {J^v}^{1/3}
+                        \left(
+                            5 {J^v} + 8 f_0 - 8
+                        \right)}{4\left(5 {J^v} + 2 f_0 -2\right)^2}
+                    \right)
+                    + \lr{
+                        \frac{\lr{1-f_0}\left(5 J^v -f_0 + 1\right)}{\left(2 f_0+5 J^v-2\right)^2}\frac{\eta_m}{m_\mathcal{J}}-\frac{1}{2}
+                    }\myC\cdot{\myC^v}^{-1}
+                \right]\myC^v
+            \end{align*}
+        The evolution equation is the same as Equation (57) in the paper. This can be checked quickly by subtracting the differing terms (which equates to 0!). The same goes for the first Piola-Kirchhoff stress tensor.
+        \end{block}
+    \end{frame}
+    % \begin{frame}
+    %     \begin{block}{Looking term that multiplies $\myC\cdot{\myC^v}^{-1}$ (RHS!!)}
+    %         \begin{align*}
+    %             \left(\frac{\overline{\nu}}{3} + \frac{3 (f_0-1)^2 \nu _m}{\left(2 f_0+5 J^v-2\right)^2}
+    %             \right) = 
+    %             \frac{(f_0-1)  \left(f_0-5 J^v-1\right)}{\left(2 f_0+5 J^v-2\right)^2}\nu _m
+    %         \end{align*}
+    %         This further multiplies $\frac{1}{m_\mathcal{K}}\lr{1
+    %         - \frac{2}{3}\frac{m_\mathcal{K}}{m_\mathcal{J}}
+    %         }$
+    %         which can be expanded as
+    %         \begin{align*}
+    %             \frac{1}{m_\mathcal{K}} \lrB{\frac{(f_0-1)  \left(f_0-5 J^v-1\right)}{\left(2 f_0+5 J^v-2\right)^2}\nu _m}
+    %             =
+    %             -\frac{\nu _m \left(f_0-5 J^v-1\right)}{3 \eta _m \left(2 f_0+5 J^v-2\right)}
+    %         \end{align*}
+    %         and
+    %         \begin{align*}
+    %             -\frac{2}{3m_\mathcal{J}} \lrB{\frac{(f_0-1)  \left(f_0-5 J^v-1\right)}{\left(2 f_0+5 J^v-2\right)^2}\nu _m}
+    %             =
+    %             -\frac{2 (f_0-1)  \left(f_0-5 J^v-1\right)}{3 \left(2 f_0+5 J^v-2\right)^2}\frac{\nu_m}{m_\mathcal{J}}
+    %         \end{align*}
+    %     \end{block}
+    % \end{frame}
+    % \begin{frame}
+    %     \begin{block}{Factoring out terms to match evolution equation (57)}
+    %         Term with $\myC\cdot{\myC^v}^{-1}$ after taking to the LHS
+    %         \footnotesize\begin{align*}
+    %             \frac{2\nu_m}{3\eta_m}\lrB{
+    %                 \frac{(1-f_0)  \left(-f_0+5 J^v+1\right)}{\left(2 f_0+5 J^v-2\right)^2}\frac{\eta_m}{m_\mathcal{J}}
+    %                 -\frac{1}{2} \frac{\left(-f_0 + 5 J^v + 1\right)}{\left(2 f_0+5 J^v-2\right)}
+    %             }
+    %         \end{align*}
+    %         {
+    %             \color{blue} Note that the first term is matching but the second isn't.
+    %         }
+    %     \end{block}
+    %     \begin{block}{Another term that multiplies $\myC^v$ directly (RHS)}
+    %         \footnotesize\begin{align*}
+    %             \frac{\nu _m \left(f_0+2 J^v-J-1\right)}{
+    %                 \left({J^v + f_0-1}\right)^{2/3}
+    %                 \lr{J+f_0 - 1}^{1/3}}
+    %         \end{align*}
+    %         Then multiplied by $\frac{2}{3m_\mathcal{J}}$ (two minus signs on the RHS). After taking to LHS, becomes
+    %         \begin{align*}
+    %             \frac{2}{3m_\mathcal{J}}\lrB{
+    %                 \frac{\nu _m \left(-f_0 - 2 J^v + J + 1\right)}{
+    %                 \left({J^v + f_0-1}\right)^{2/3}
+    %                 \lr{J+f_0 - 1}^{1/3}}
+    %             }
+    %             =
+    %             \frac{2\nu_m}{3\eta_m}
+    %             \lrB{\lr{\frac{\eta_m}{m_\mathcal{J}}}
+    %                 \frac{\left(J- 2 J^v -f_0  + 1 \right)}{
+    %                 \left({J^v + f_0-1}\right)^{2/3}
+    %                 \lr{J+f_0 - 1}^{1/3}}
+    %             }
+    %         \end{align*}
+    %     \end{block}
+    % \end{frame}
+    % \begin{frame}
+    %     \begin{block}{Final evolution equation}
+    %         \footnotesize\begin{align*}
+    %             \dot{\myC}^{v} = \frac{5J^v + 2(f_0 - 1)}{J^v\eta_m\lr{3+2f_0}}{\myC}
+    %             &+
+    %             \frac{J^v + f_0 - 1}{2\eta_m(1-f_0)J^v}J^e\del{\myPsi}{J^e}{\bf \myC^v}\\
+    %             &-  \lr{\frac{(7J^v+f_0 - 1)\nu_m}{6\eta_mJ^v(3+2f_0)}\myC\cdot{\myC^v}^{-1}}
+    %             {\bf \myC^v}
+    %         \end{align*}
+    %     \end{block}
+    % \end{frame}
+\end{document}

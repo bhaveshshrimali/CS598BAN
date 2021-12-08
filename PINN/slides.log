@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.21)  18 NOV 2021 11:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.21)  8 DEC 2021 10:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/CoursesFall2021/CS598/Presentations/PINN/slides.tex
-(d:/CoursesFall2021/CS598/Presentations/PINN/slides.tex
+**d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.tex
+(d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-02-25> (c:/texlive/2019/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2019/09/29 v3.57 A class for typesetting presentations
@@ -752,14 +752,14 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 ) (c:/texlive/2019/texmf-dist/tex/latex/beamer/multimedia.sty
 Package: multimedia 2012/05/02 ver 0.02
 \mm@movie=\count354
-) (d:/CoursesFall2021/CS598/Presentations/PINN/definitions.tex)
+) (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/definitions.tex)
 Package hyperref Info: Option `colorlinks' set `true' on input line 30.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 106.
 
-(d:/CoursesFall2021/CS598/Presentations/PINN/slides.aux)
+(d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.aux)
 \openout1 = `slides.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
@@ -846,7 +846,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 107.
 LaTeX Info: Redefining \pageref on input line 107.
 LaTeX Info: Redefining \nameref on input line 107.
- (d:/CoursesFall2021/CS598/Presentations/PINN/slides.out) (d:/CoursesFall2021/CS598/Presentations/PINN/slides.out)
+ (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.out) (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.out)
 \@outlinefile=\write5
 \openout5 = `slides.out'.
 
@@ -911,9 +911,9 @@ Dictionary: translator-months-dictionary, Language: English
 Dictionary: translator-numbers-dictionary, Language: English 
 ) (c:/texlive/2019/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (d:/CoursesFall2021/CS598/Presentations/PINN/slides.nav) [1
+) (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.nav) [1
 
-{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (d:/CoursesFall2021/CS598/Presentations/PINN/slides.toc) [2
+{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.toc) [2
 
 ] [3
 
@@ -953,7 +953,7 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 
 ] [15
 
-] (d:/CoursesFall2021/CS598/Presentations/PINN/slides.toc) [16
+] (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.toc) [16
 
 ] [17
 
@@ -965,7 +965,7 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 
 ] [21
 
-] (d:/CoursesFall2021/CS598/Presentations/PINN/slides.toc) [22
+] (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.toc) [22
 
 ] [23
 
@@ -977,7 +977,7 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 
 ] [27
 
-] (d:/CoursesFall2021/CS598/Presentations/PINN/slides.toc) [28
+] (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.toc) [28
 
 ] [29
 
@@ -987,7 +987,7 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 
 ] [32
 
-] (d:/CoursesFall2021/CS598/Presentations/PINN/slides.toc) [33
+] (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.toc) [33
 
 ] [34
 
@@ -1011,10 +1011,10 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 
 ]
 Package epstopdf Info: Source file: <h_tx.eps>
-(epstopdf)                    date: 2021-11-14 18:58:38
+(epstopdf)                    date: 2021-11-15 06:28:38
 (epstopdf)                    size: 2014022 bytes
 (epstopdf)             Output file: <h_tx-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-11-17 13:41:17
+(epstopdf)                    date: 2021-11-18 01:11:17
 (epstopdf)                    size: 170566 bytes
 (epstopdf)             Command: <repstopdf --outfile=h_tx-eps-converted-to.pdf h_tx.eps>
 (epstopdf)             \includegraphics on input line 334.
@@ -1026,13 +1026,13 @@ Package pdftex.def Info: h_tx-eps-converted-to.pdf  used on input line 334.
 (pdftex.def)             Requested size: 309.77368pt x 178.76059pt.
  [44
 
- <d:/CoursesFall2021/CS598/Presentations/PINN/h_tx-eps-converted-to.pdf>] [45
+ <d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/h_tx-eps-converted-to.pdf>] [45
 
 ] [46
 
 ] [47
 
-] (d:/CoursesFall2021/CS598/Presentations/PINN/slides.toc) [48
+] (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.toc) [48
 
 ] [49
 
@@ -1044,10 +1044,10 @@ Package pdftex.def Info: h_tx-eps-converted-to.pdf  used on input line 334.
 
 ]
 Package epstopdf Info: Source file: <u_tx.eps>
-(epstopdf)                    date: 2021-11-14 19:05:25
+(epstopdf)                    date: 2021-11-15 06:35:25
 (epstopdf)                    size: 2196438 bytes
 (epstopdf)             Output file: <u_tx-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-11-17 17:58:58
+(epstopdf)                    date: 2021-11-18 05:28:58
 (epstopdf)                    size: 172158 bytes
 (epstopdf)             Command: <repstopdf --outfile=u_tx-eps-converted-to.pdf u_tx.eps>
 (epstopdf)             \includegraphics on input line 401.
@@ -1059,7 +1059,7 @@ Package pdftex.def Info: u_tx-eps-converted-to.pdf  used on input line 401.
 (pdftex.def)             Requested size: 240.93567pt x 193.05064pt.
  [53
 
- <d:/CoursesFall2021/CS598/Presentations/PINN/u_tx-eps-converted-to.pdf>] (d:/CoursesFall2021/CS598/Presentations/PINN/slides.toc) [54
+ <d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/u_tx-eps-converted-to.pdf>] (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.toc) [54
 
 ] [55
 
@@ -1087,10 +1087,10 @@ Package pdftex.def Info: u_tx-eps-converted-to.pdf  used on input line 401.
 
 ]
 Package epstopdf Info: Source file: <vorticity.eps>
-(epstopdf)                    date: 2021-11-14 19:06:57
+(epstopdf)                    date: 2021-11-15 06:36:57
 (epstopdf)                    size: 2698790 bytes
 (epstopdf)             Output file: <vorticity-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-11-17 20:01:05
+(epstopdf)                    date: 2021-11-18 07:31:05
 (epstopdf)                    size: 244041 bytes
 (epstopdf)             Command: <repstopdf --outfile=vorticity-eps-converted-to.pdf vorticity.eps>
 (epstopdf)             \includegraphics on input line 461.
@@ -1102,12 +1102,12 @@ Package pdftex.def Info: vorticity-eps-converted-to.pdf  used on input line 461.
 (pdftex.def)             Requested size: 223.72485pt x 160.6217pt.
  [67
 
- <d:/CoursesFall2021/CS598/Presentations/PINN/vorticity-eps-converted-to.pdf>]
+ <d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/vorticity-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <pressurePredicted.eps>
-(epstopdf)                    date: 2021-11-14 19:08:21
+(epstopdf)                    date: 2021-11-15 06:38:21
 (epstopdf)                    size: 2281498 bytes
 (epstopdf)             Output file: <pressurePredicted-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-11-17 20:47:13
+(epstopdf)                    date: 2021-11-18 08:17:13
 (epstopdf)                    size: 103582 bytes
 (epstopdf)             Command: <repstopdf --outfile=pressurePredicted-eps-converted-to.pdf pressurePredicted.eps>
 (epstopdf)             \includegraphics on input line 487.
@@ -1119,14 +1119,14 @@ Package pdftex.def Info: pressurePredicted-eps-converted-to.pdf  used on input l
 (pdftex.def)             Requested size: 291.77379pt x 80.83168pt.
  [68
 
- <d:/CoursesFall2021/CS598/Presentations/PINN/pressurePredicted-eps-converted-to.pdf>] (d:/CoursesFall2021/CS598/Presentations/PINN/slides.toc) [69
+ <d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/pressurePredicted-eps-converted-to.pdf>] (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.toc) [69
 
 ]
 Package epstopdf Info: Source file: <utx2.eps>
-(epstopdf)                    date: 2021-11-14 20:55:39
+(epstopdf)                    date: 2021-11-15 08:25:39
 (epstopdf)                    size: 2237658 bytes
 (epstopdf)             Output file: <utx2-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-11-17 20:55:38
+(epstopdf)                    date: 2021-11-18 08:25:38
 (epstopdf)                    size: 194750 bytes
 (epstopdf)             Command: <repstopdf --outfile=utx2-eps-converted-to.pdf utx2.eps>
 (epstopdf)             \includegraphics on input line 513.
@@ -1142,12 +1142,12 @@ Overfull \vbox (33.15355pt too high) detected at line 513
 
 [70
 
- <d:/CoursesFall2021/CS598/Presentations/PINN/utx2-eps-converted-to.pdf>]
+ <d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/utx2-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <utx2.eps>
-(epstopdf)                    date: 2021-11-14 20:55:39
+(epstopdf)                    date: 2021-11-15 08:25:39
 (epstopdf)                    size: 2237658 bytes
 (epstopdf)             Output file: <utx2-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-11-17 20:55:38
+(epstopdf)                    date: 2021-11-18 08:25:38
 (epstopdf)                    size: 194750 bytes
 (epstopdf)             Command: <repstopdf --outfile=utx2-eps-converted-to.pdf utx2.eps>
 (epstopdf)             \includegraphics on input line 513.
@@ -1164,10 +1164,10 @@ Overfull \vbox (33.15355pt too high) detected at line 513
 
 ]
 Package epstopdf Info: Source file: <utx2.eps>
-(epstopdf)                    date: 2021-11-14 20:55:39
+(epstopdf)                    date: 2021-11-15 08:25:39
 (epstopdf)                    size: 2237658 bytes
 (epstopdf)             Output file: <utx2-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-11-17 20:55:38
+(epstopdf)                    date: 2021-11-18 08:25:38
 (epstopdf)                    size: 194750 bytes
 (epstopdf)             Command: <repstopdf --outfile=utx2-eps-converted-to.pdf utx2.eps>
 (epstopdf)             \includegraphics on input line 513.
@@ -1194,7 +1194,7 @@ Overfull \vbox (33.15355pt too high) detected at line 513
 
 ] [78
 
-] (d:/CoursesFall2021/CS598/Presentations/PINN/slides.toc) [79
+] (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.toc) [79
 
 ] [80
 
@@ -1220,7 +1220,7 @@ Overfull \vbox (33.15355pt too high) detected at line 513
 
 ] [91
 
-] (d:/CoursesFall2021/CS598/Presentations/PINN/slides.bbl) [92
+] (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.bbl) [92
 
  <c:/texlive/2019/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1234,7 +1234,7 @@ Overfull \vbox (33.15355pt too high) detected at line 513
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 573.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 573.
- (d:/CoursesFall2021/CS598/Presentations/PINN/slides.aux)
+ (d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 573.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 573.
 Package rerunfilecheck Info: File `slides.out' has not changed.
@@ -1242,14 +1242,14 @@ Package rerunfilecheck Info: File `slides.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  23022 strings out of 480994
- 440754 string characters out of 5916047
+ 441827 string characters out of 5916047
  724880 words of memory out of 5000000
  37737 multiletter control sequences out of 15000+600000
  555962 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,15n,67p,834b,700s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,15n,67p,863b,700s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on d:/CoursesFall2021/CS598/Presentations/PINN/slides.pdf (92 pages, 1347615 bytes).
+Output written on d:/CoursesFall2021/CS598/Presentations/AugmentedNeuralODEs/CS598BAN/PINN/slides.pdf (92 pages, 1347771 bytes).
 PDF statistics:
  2911 PDF objects out of 2984 (max. 8388607)
  2736 compressed objects within 28 object streams
